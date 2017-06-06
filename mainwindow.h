@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QtCrypto/QtCrypto>
+#include <QtCrypto/qca.h>
 #include <QMainWindow>
 #include <QtNetwork>
 #include <QUdpSocket>
@@ -33,6 +35,8 @@ private slots:
     void read();
     void on_connecting_clicked();
     void on_sending_clicked();
+    void qca_encode();
+    void qca_decode();
 
 private:
     Ui::MainWindow *ui;
@@ -40,6 +44,8 @@ private:
     QTcpServer *tcpServer;
     int client_status;
     QString nickname;
+    QString Sendmessage;
+    QString Resievemessage;
     QMap<int,QTcpSocket *> SClients;
 };
 #endif // MAINWINDOW_H
